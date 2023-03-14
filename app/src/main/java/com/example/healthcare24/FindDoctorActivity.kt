@@ -13,83 +13,36 @@ class FindDoctorActivity : AppCompatActivity() {
 
         val exit: CardView = findViewById(R.id.cardFDBack)
         exit.setOnClickListener {
-            fun onClick(view: View) {
                 startActivity(Intent(this@FindDoctorActivity, HomeActivity::class.java))
             }
-
-            val findDoctor: CardView = findViewById(R.id.cardFindDoctor)
-            findDoctor.setOnClickListener {
-                startActivity(Intent(this@FindDoctorActivity,HomeActivity::class.java))
-            }
-
             val familyphysician: CardView = findViewById(R.id.cardFDFamilyPhysician)
             familyphysician.setOnClickListener {
-                startActivity(Intent(this@FindDoctorActivity,DoctorDetailsActivity::class.java))
-
-
-                val findDoctor: CardView = findViewById(R.id.cardFindDoctor)
-
-                findDoctor.setOnClickListener {
-                    val intent = Intent(this@FindDoctorActivity,DoctorDetailsActivity::class.java)
-                    intent.putExtra("title", "Family Physicians")
-
-
-                   /* findDoctor.setOnClickListener(object : View.OnClickListener {
-                        override fun onClick(view: View) {
-                            startActivity(Intent(this@FindDoctorActivity,DoctorDetailsActivity::class.java))
-                        }})*/
-
-    }
-
-
-
-                val dietician: CardView = findViewById(R.id.cardFDDietician)
-                dietician.setOnClickListener {
-                    val findDoctor: CardView = findViewById(R.id.cardFindDoctor)
-                    findDoctor.setOnClickListener {
-                        val intent = Intent(this@FindDoctorActivity,DoctorDetailsActivity::class.java)
-                        intent.putExtra("title", "Dietician")
-
-                        startActivity(intent)
-
-                    }
-
-                    val dentist: CardView = findViewById(R.id.cardFDDentist)
-                    dentist.setOnClickListener {
-                    val findDoctor: CardView = findViewById(R.id.cardFindDoctor)
-                        findDoctor.setOnClickListener {
-                            val intent =
-                                Intent(this@FindDoctorActivity, DoctorDetailsActivity::class.java)
-                            intent.putExtra("title", "Dentist")
-
-                            startActivity(intent)
-
-                        }
-
-                        val surgeon: CardView = findViewById(R.id.cardFDSurgeon)
-                        dentist.setOnClickListener {
-                            val findDoctor: CardView = findViewById(R.id.cardFindDoctor)
-                            findDoctor.setOnClickListener {
-                                val intent =
-                                    Intent(
-                                        this@FindDoctorActivity,
-                                        DoctorDetailsActivity::class.java
-                                    )
-                                intent.putExtra("title", "Surgeon")
-
-                            }
-
-                            val cardiologists: CardView = findViewById(R.id.cardFDCardiologists)
-                            dentist.setOnClickListener {
-                                val findDoctor: CardView = findViewById(R.id.cardFindDoctor)
-                                findDoctor.setOnClickListener {
-                                    val intent =
-                                        Intent(
-                                            this@FindDoctorActivity,
-                                            DoctorDetailsActivity::class.java
-                                        )
-
-                                    intent.putExtra("title", "Cardiologists")
-
-                                }}}}}}}}}
+              val intent = Intent(this@FindDoctorActivity, DoctorDetailsActivity::class.java)
+                intent.putExtra("title", "Family Physicians")
+                startActivity(intent)
+            }
+        val dietician: CardView = findViewById(R.id.cardFDDietician)
+        dietician.setOnClickListener {
+            val intent = Intent(this@FindDoctorActivity, DoctorDetailsActivity::class.java)
+            intent.putExtra("title", "Dietician")
+            startActivity(intent)
+        }
+        val dentist: CardView = findViewById(R.id.cardFDDentist)
+        dentist.setOnClickListener {
+            val intent = Intent(this@FindDoctorActivity, DoctorDetailsActivity::class.java)
+            intent.putExtra("title", "Dentist")
+            startActivity(intent)
+        }
+        val surgeon: CardView = findViewById(R.id.cardFDSurgeon)
+       surgeon.setOnClickListener {
+            val intent = Intent(this@FindDoctorActivity, DoctorDetailsActivity::class.java)
+            intent.putExtra("title", "Surgeon")
+            startActivity(intent)
+       }
+        val cardiologists: CardView = findViewById(R.id.cardFDCardiologists)
+        cardiologists.setOnClickListener {
+            val intent = Intent(this@FindDoctorActivity, DoctorDetailsActivity::class.java)
+            intent.putExtra("title", "Cardiologists")
+            startActivity(intent)
+        }}}
 

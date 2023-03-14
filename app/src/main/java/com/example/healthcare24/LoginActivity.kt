@@ -27,20 +27,23 @@ class LoginActivity : AppCompatActivity() {
         btn = findViewById(R.id.buttonLogin)
         tv = findViewById(R.id.textViewNewUser)
 
-        btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View) {
-                startActivity(Intent(this@LoginActivity,HomeActivity::class.java))
+        btn.setOnClickListener{
+
+            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+            startActivity(intent)
+/* //this is for verifying the Login details
 
                val username = edUsername.text.toString()
                 val password = edPassword.text.toString()
                 val db = Database(applicationContext, "Healthcare24", null, 1)
 
                 if(username.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(applicationContext, "Please fill all details", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Please fill all details", Toast.LENGTH_SHORT).show()
             } else {
 
+                val db = Database(this@LoginActivity, "Healthcare24", null, 1)
                 if (db.login(username,password)==1) {
-                    Toast.makeText(applicationContext, "Login Success", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
 
                     val sharedpreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE)
                     val editor = sharedpreferences.edit()
@@ -50,17 +53,16 @@ class LoginActivity : AppCompatActivity() {
                     editor.apply()
 
                     startActivity(Intent(this@LoginActivity,HomeActivity::class.java))
+                    finish()
 
                 }else{
-                }
 
-                Toast.makeText(applicationContext, "Invalid Username and Password", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Invalid Username and Password", Toast.LENGTH_SHORT).show()
             }
-            }
-        })
-        tv.setOnClickListener(object :View.OnClickListener {
-            override fun onClick(view: View) {
+            }*/
+        }
+        tv.setOnClickListener {
                 startActivity(Intent(this@LoginActivity,RegisterActivity::class.java))
             }
-        })
-}}
+        }
+}
